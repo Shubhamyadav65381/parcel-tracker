@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h2 class="mb-4">📦 User Dashboard</h2>
+
+  <div class="row g-4">
+    <!-- My Parcels -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">📬 My Parcels</h5>
+          <p class="card-text">View the parcels you’ve created and their current statuses.</p>
+          <a href="/parcels/my" class="btn btn-primary w-100">View Parcels</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Parcel -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">➕ Create Parcel</h5>
+          <p class="card-text">Fill in details and register a new parcel to track.</p>
+          <a href="/parcels/create" class="btn btn-success w-100">Create</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Parcel -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">🔍 Track Parcel</h5>
+          <p class="card-text">Use a tracking ID to find the current location and status.</p>
+          <a href="/parcels/track" class="btn btn-secondary w-100">Track</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-end mt-5">
+    <span class="text-muted">Login as <strong><%= user.name %></strong> (<%= user.email %>)</span>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

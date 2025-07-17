@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h2 class="mb-4">📦 Track Parcel</h2>
+
+  <!-- Track Form -->
+  <form class="row g-3 needs-validation" action="/parcels/track" method="POST" novalidate>
+    <div class="col-md-6">
+      <label for="trackingId" class="form-label">Enter Tracking ID</label>
+      <input type="text" name="trackingId" id="trackingId" class="form-control" required>
+      <div class="invalid-feedback">Tracking ID is required</div>
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary">Track</button>
+    </div>
+  </form>
+
+  <% if (error) { %>
+    <div class="alert alert-danger mt-4"><%= error %></div>
+  <% } %>
+
+  <% if (parcel) { %>
+    <div class="card mt-5 shadow-sm">
+      <div class="card-header bg-success text-white">
+        Parcel Details
+      </div>
+      <div class="card-body">
+        <p><strong>Tracking ID:</strong> <%= parcel.trackingId %></p>
+        <p><strong>Sender:</strong> <%= parcel.sender %></p>
+        <p><strong>Receiver:</strong> <%= parcel.receiver %></p>
+        <p><strong>Description:</strong> <%= parcel.description %></p>
+        <p><strong>Destination:</strong> <%= parcel.destination %></p>
+        <p><strong>Status:</strong> <%= parcel.status %></p>
+        <p><strong>Created At:</strong> <%= new Date(parcel.createdAt).toLocaleString() %></p>
+
+        <hr />
+        <h5>📍 Logs:</h5>
+        <% if (parcel.logs && parcel.logs.length > 0) { %>
+          <ul class="list-group">
+            <% parcel.logs.forEach(log => { %>
+              <li class="list-group-item">
+                <strong><%= log.status %></strong> - <%= log.location %> 
+                <br>
+                <small class="text-muted"><%= new Date(log.timestamp).toLocaleString() %></small>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p class="text-muted">No status updates yet.</p>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>

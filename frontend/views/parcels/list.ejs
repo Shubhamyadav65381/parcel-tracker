@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h3>📦 My Parcels</h3>
+
+  <% if (parcels.length === 0) { %>
+    <div class="alert alert-warning">No parcels created yet.</div>
+  <% } else { %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tracking ID</th>
+          <th>Sender</th>
+          <th>Receiver</th>
+          <th>Status</th>
+          <th>Destination</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% parcels.forEach(p => { %>
+          <tr>
+            <td><%= p.trackingId %></td>
+            <td><%= p.sender %></td>
+            <td><%= p.receiver %></td>
+            <td><%= p.status %></td>
+            <td><%= p.destination %></td>
+            <td><%= new Date(p.createdAt).toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>

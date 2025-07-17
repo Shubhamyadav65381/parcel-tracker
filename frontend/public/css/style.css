@@ -1,0 +1,28 @@
+body {
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.btn-lg {
+  padding: 15px 20px;
+  font-size: 18px;
+}
+body {
+  background-color: #f9f9f9;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.alert {
+  margin-top: 1rem;
+}
+
+.btn {
+  border-radius: 0.3rem;
+}
+

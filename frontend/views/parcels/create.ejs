@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">📦 Create a New Parcel</h2>
+
+  <% if (error) { %>
+    <div class="alert alert-danger text-center"><%= error %></div>
+  <% } %>
+
+  <form action="/parcels/create" method="POST" class="needs-validation" novalidate>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="sender" class="form-label">Sender</label>
+        <input type="text" class="form-control" id="sender" name="sender" required>
+      </div>
+      <div class="col-md-6">
+        <label for="receiver" class="form-label">Receiver</label>
+        <input type="text" class="form-control" id="receiver" name="receiver" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Parcel Description</label>
+      <input type="text" class="form-control" id="description" name="description" required>
+    </div>
+
+    <div class="mb-4">
+      <label for="destination" class="form-label">Destination</label>
+      <input type="text" class="form-control" id="destination" name="destination" required>
+    </div>
+
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary btn-lg">🚀 Create Parcel</button>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>

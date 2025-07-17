@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h2 class="mb-4">👨‍💼 Admin Dashboard</h2>
+
+  <div class="row g-4">
+    <!-- View All Parcels -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">📦 View All Parcels</h5>
+          <p class="card-text">View, manage, and update the status of all parcels.</p>
+          <a href="/parcels/all" class="btn btn-primary w-100">Manage Parcels</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">📊 Analytics</h5>
+          <p class="card-text">View statistics on parcel statuses, trends, and insights.</p>
+          <a href="/parcels/dashboard" class="btn btn-success w-100">View Analytics</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Parcel (Optional for Admin) -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">➕ Create Parcel</h5>
+          <p class="card-text">Register a new parcel in the system.</p>
+          <a href="/parcels/create" class="btn btn-secondary w-100">Create</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-end mt-5">
+    <span class="text-muted">Logged in as <strong><%= user.name %></strong> (<%= user.email %>)</span>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
