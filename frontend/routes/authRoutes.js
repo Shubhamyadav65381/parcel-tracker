@@ -14,7 +14,7 @@ router.post('/register', async (req, res) => {
   const { name, email, password, role } = req.body;
 
   try {
-    await axios.post(`${BACKEND_URL}/register`, {
+    await axios.post(`${BACKEND_URL}/api/users/register`, {
       name, email, password, role
     });
     res.redirect('/login');
@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const response = await axios.post(`${BACKEND_URL}/login`, { email, password });
+    const response = await axios.post(`${BACKEND_URL}/api/users/login`, { email, password });
     const { token, user } = response.data;
 
     req.session.user = user;
