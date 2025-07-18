@@ -4,7 +4,7 @@ const axios = require('axios');
 const { ensureAuth, ensureUser } = require('../middleware/auth');
 const { ensureAdmin } = require('../middleware/auth');
 
-const BACKEND_URL = ' https://parcel-tracker-9lwa.onrender.com';
+const BACKEND_URL = 'https://parcel-tracker-wc6q.onrender.com/';
 
 // Show Create Parcel Form
 router.get('/create', ensureAuth, (req, res) => {
