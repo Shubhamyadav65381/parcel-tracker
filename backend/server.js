@@ -11,7 +11,7 @@ app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/parcels', require('./routes/parcelRoutes'));
 app.use(cors({
-  origin: "https://parcel-tracker-frontend-m67f.onrender.com", 
+  origin: "https://parcel-tracker-frontend-m67f.onrender.com",
   credentials: true,
 }));
 
@@ -19,9 +19,7 @@ const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log('MongoDB connection failed:',err));
-
-
+  .catch(err => console.log('MongoDB connection failed:', err));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
