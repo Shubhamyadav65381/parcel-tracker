@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // CORS configuration for frontend access
 app.use(cors({
-  origin: 'https://parcel-tracker-1.onrender.com',
+  origin: 'https://parcel-tracker-frontend-eber.onrender.com',
   credentials: true,
 }));
 
