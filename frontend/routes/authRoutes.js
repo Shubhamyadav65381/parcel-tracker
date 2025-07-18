@@ -5,12 +5,12 @@ const axios = require('axios');
 const BACKEND_URL = ' https://parcel-tracker-9lwa.onrender.com';
 
 // Show register page
-router.get('/register', (req, res) => {
+router.get('https://parcel-tracker-wc6q.onrender.com /api/users/register', (req, res) => {
   res.render('auth/register');
 });
 
 // Handle register
-router.post('https://your-backend.onrender.com/api/users/register', async (req, res) => {
+router.post('https://parcel-tracker-wc6q.onrender.com /api/users/register', async (req, res) => {
   const { name, email, password, role } = req.body;
 
   try {
