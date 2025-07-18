@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const BACKEND_URL = ' https://parcel-tracker-9lwa.onrender.com';
+const BACKEND_URL = 'https://parcel-tracker-wc6q.onrender.com';
 
 // Show register page
-router.get('https://parcel-tracker-wc6q.onrender.com /api/users/register', (req, res) => {
+router.get('https://parcel-tracker-wc6q.onrender.com/api/users/register', (req, res) => {
   res.render('auth/register');
 });
 
 // Handle register
-router.post('https://parcel-tracker-wc6q.onrender.com /api/users/register', async (req, res) => {
+router.post('/register', async (req, res) => {
   const { name, email, password, role } = req.body;
 
   try {
@@ -24,12 +24,12 @@ router.post('https://parcel-tracker-wc6q.onrender.com /api/users/register', asyn
 });
 
 // Show login page
-router.get('/login', (req, res) => {
+router.get('https://parcel-tracker-wc6q.onrender.com/login', (req, res) => {
   res.render('auth/login');
 });
 
 // Handle login
-router.post('/login', async (req, res) => {
+router.post('https://parcel-tracker-wc6q.onrender.com/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
