@@ -16,7 +16,7 @@ router.post('/create', ensureAuth, async (req, res) => {
   const { sender, receiver, description, destination } = req.body;
 
   try {
-    const response = await axios.post(`${BACKEND_URL}`, {
+    const response = await axios.post(`${BACKEND_URL}/api/parcels`, {
       sender,
       receiver,
       description,
