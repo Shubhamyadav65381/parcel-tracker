@@ -68,7 +68,7 @@ router.get('/my', ensureAuth, ensureUser, async (req, res) => {
 // View All Parcels (Admin)
 router.get('/all', ensureAuth, ensureAdmin, async (req, res) => {
   try {
-    const response = await axios.get('http://localhost:5000/api/parcels', {
+    const response = await axios.get('https://parcel-tracker-wc6q.onrender.com/api/parcels', {
       headers: { Authorization: req.session.token }
     });
 
@@ -90,7 +90,7 @@ router.post('/update/:id', ensureAuth, ensureAdmin, async (req, res) => {
   const { id } = req.params;
 
   try {
-    await axios.patch(`http://localhost:5000/api/parcels/${id}`, {
+    await axios.patch(`https://parcel-tracker-wc6q.onrender.com/api/parcels/${id}`, {
       status
     }, {
       headers: { Authorization: req.session.token }
@@ -112,7 +112,7 @@ router.post('/track', async (req, res) => {
   const { trackingId } = req.body;
 
   try {
-    const response = await axios.get(`http://localhost:5000/api/parcels/track/${trackingId}`);
+    const response = await axios.get(`https://parcel-tracker-wc6q.onrender.com/api/parcels/track/${trackingId}`);
     const parcel = response.data;
 
     res.render('parcels/track', { parcel, error: null });
@@ -124,7 +124,7 @@ router.post('/track', async (req, res) => {
 //analytics page route
 router.get('/dashboard', ensureAuth, ensureAdmin, async (req, res) => {
   try {
-    const response = await axios.get('http://localhost:5000/api/admin/analytics', {
+    const response = await axios.get('https://parcel-tracker-wc6q.onrender.com/api/admin/analytics', {
       headers: { Authorization: req.session.token }
     });
 
