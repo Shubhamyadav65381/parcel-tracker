@@ -45,7 +45,7 @@ router.post('/create', ensureAuth, async (req, res) => {
 // Show My Parcels (Simple Page for Now)
 router.get('/my', ensureAuth, ensureUser, async (req, res) => {
   try {
-    const response = await axios.get(`${BACKEND_URL}/my`, {
+    const response = await axios.get(`${BACKEND_URL}/api/parcels/my`, {
       headers: {
         Authorization: req.session.token
       }
