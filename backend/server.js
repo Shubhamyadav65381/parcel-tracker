@@ -12,7 +12,7 @@ const app = express();
 
 //  Middleware for parsing JSON bodies
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 // CORS configuration for frontend access
 app.use(cors({
   origin: 'https://parcel-tracker-1.onrender.com',
