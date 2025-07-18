@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const BACKEND_URL = 'http://localhost:5000/api/users';
+const BACKEND_URL = ' https://parcel-tracker-9lwa.onrender.com';
 
 // Show register page
 router.get('/register', (req, res) => {
