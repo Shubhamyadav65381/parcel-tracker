@@ -10,7 +10,7 @@ router.get('/register', (req, res) => {
 });
 
 // Handle register
-router.post('/register', async (req, res) => {
+router.post('https://your-backend.onrender.com/api/users/register', async (req, res) => {
   const { name, email, password, role } = req.body;
 
   try {
