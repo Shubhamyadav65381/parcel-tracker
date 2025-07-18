@@ -1,13 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const userRoutes = require("./routes/userRoutes");
 const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 app.use('/api/admin', require('./routes/adminRoutes'));
+app.use("/api/users", userRoutes);
+app.use(cors({
+  origin: "https://parcel-tracker-frontend-m67f.onrender.com", 
+  credentials: true,
+}));
 
 const PORT = process.env.PORT || 5000;
 
