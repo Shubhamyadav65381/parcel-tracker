@@ -45,7 +45,7 @@ router.post('/create', ensureAuth, async (req, res) => {
 // Show My Parcels (Simple Page for Now)
 router.get('/my', ensureAuth, ensureUser, async (req, res) => {
   try {
-    const response = await axios.get(`https://parcel-tracker-wc6q.onrender.com/api/parcels/my`, {
+    const response = await axios.get(`${BACKEND_URL}/my`, {
       headers: {
         Authorization: req.session.token
       }
